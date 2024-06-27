@@ -1,9 +1,9 @@
+
 import puppeteer from "puppeteer";
 import fs from "fs";
 import express from "express";
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
@@ -33,7 +33,7 @@ app.post("/scrap", async (req, res) => {
         return index === 0 ? match.toLowerCase() : match.toUpperCase();
       });
     }
-
+    
     function formatDateFromTimestamp(timestamp) {
       let date = new Date(timestamp);
 
@@ -481,7 +481,7 @@ app.post("/scrap", async (req, res) => {
     //   // await browser.close();
     // }
 
-    fs.appendFile("page4.json", JSON.stringify(InfoArray), (err) => {
+    fs.appendFile("page5.json", JSON.stringify(InfoArray), (err) => {
       if (err) throw err;
       console.log("File saved");
     });
